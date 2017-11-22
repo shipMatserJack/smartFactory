@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>工艺路线</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="tool/drag/jquery.dad.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+<div class="base-header">
+  <a href="index.html" class="fl logo">
+    <!--<img src="images/logo.png" alt="">-->
+  </a>
+  <div class="fr">
+    <div class="fl emial">
+      <i class="iconfont icon-youxiang curr"></i>
+    </div>
+    <a href="login.html">
+      <div class="user fl">
+        <img src="images/userico.png" alt="">
+        <span class="userName">Aaron</span>
+        <i class="iconfont icon-xiala"></i>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="base-main">
+
+  <!-- 左导航 -->
+  <div class="base-leftnav">
+    <div class="scroll">
+      <ul>
+        <li><a href="index.html">
+          <i class="iconfont icon-zhuye1"></i>
+          首页
+        </a></li>
+        <li class="orderEntry"><a href="order-entry.html">
+          <i class="iconfont icon-dingdan"></i>
+          订单录入
+        </a></li>
+        <!--<li><a href="material-input.html">-->
+        <!--<i class="iconfont icon-wuliaoguanli"></i>-->
+        <!--物料录入-->
+        <!--</a></li>-->
+        <li><a href="qrcode.html">
+          <i class="iconfont icon-erweima"></i>
+          二维码管理
+        </a></li>
+        <li><a href="drawing-management.html">
+          <i class="iconfont icon-tuzhi"></i>
+          图纸管理
+        </a></li>
+        <li><a class="curr" href="#">
+          <i class="iconfont icon-liucheng"></i>
+          工艺路线
+        </a></li>
+        <li><a href="#">
+          <i class="iconfont icon-icon"></i>
+          用户管理
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 公共导航 -->
+  <div class="base-sub-nav clearfix">
+    <div class="fl"><a href="index.html">主页</a><span class="arrow">&gt;</span><span class="curr">工艺路线</span></div>
+    <div class="fr">
+      <div class="setting"><a href="#"><i class="iconfont icon-artboard7"></i></a></div>
+    </div>
+  </div>
+
+  <!-- 右，内容区 -->
+  <div class="base-rightcont clearfix">
+
+    <div class="material-inpout bg" style="margin-left: 0;">
+      <dl>
+        <dt>订单编号：</dt>
+        <dd>
+          <input type="text" placeholder="201708930023">
+        </dd>
+      </dl>
+      <dl>
+        <dt>图纸编号：</dt>
+        <dd>
+          <input type="text" placeholder="NU94032">
+        </dd>
+      </dl>
+      <dl>
+        <dt>工艺编号：</dt>
+        <dd>
+          <input type="text" placeholder="4993894023">
+        </dd>
+      </dl>
+      <dl>
+        <dt>日期：</dt>
+        <dd>
+          <div class="base-select w300 fl ind-nav-select">
+            <div class="select-head">
+              <div class="con">2017-08-08</div>
+              <i class="icon"></i>
+            </div>
+            <div class="select-list">
+              <ul>
+                <li>2017-08-09</li>
+                <li>2017-08-10</li>
+                <li>2017-08-11</li>
+              </ul>
+            </div>
+          </div>
+        </dd>
+      </dl>
+      <div class="btn-wrap">
+        <a href="#" class="abtn updata">确 定</a>
+      </div>
+    </div>
+
+    <!-- 工艺流程 -->
+    <div class="process-flow clearfix">
+      <div class="col">
+        <div class="childbox">
+          <h2 class="title">
+            <span class="t fl"><span class="border"></span>工艺流程</span>
+            <span class="edit js-dragEdit fr">编辑</span>
+          </h2>
+          <div class="cont dragTag">
+            <div class="item">
+              <div class="c">
+                <div class="val">冲孔</div>
+                <i class="iconfont icon-guanbi del"></i>
+                <i class="iconfont icon-bianji editVal"></i>
+              </div>
+            </div>
+            <div class="item">
+              <div class="c">
+                <div class="val">折弯</div>
+                <i class="iconfont icon-guanbi del"></i>
+                <i class="iconfont icon-bianji editVal"></i>
+              </div>
+            </div>
+            <div class="item">
+              <div class="c">
+                <div class="val">焊接</div>
+                <i class="iconfont icon-guanbi del"></i>
+                <i class="iconfont icon-bianji editVal"></i>
+              </div>
+            </div>
+            <div class="item">
+              <div class="c">
+                <div class="val">打磨</div>
+                <i class="iconfont icon-guanbi del"></i>
+                <i class="iconfont icon-bianji editVal"></i>
+              </div>
+            </div>
+            <div class="item">
+              <div class="c">
+                <div class="val">喷塑</div>
+                <i class="iconfont icon-guanbi del"></i>
+                <i class="iconfont icon-bianji editVal"></i>
+              </div>
+            </div>
+            <div class="item">
+              <div class="c">
+                <div class="val">底漆</div>
+                <i class="iconfont icon-guanbi del"></i>
+                <i class="iconfont icon-bianji editVal"></i>
+              </div>
+            </div>
+            <p class="addMore"><span class="c"><i class="iconfont icon-jiahao"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="childbox">
+          <h2 class="title">
+            <span class="t fl"><span class="border"></span>工艺添加</span>
+            <span class="edit js-dragEdit fr">编辑</span>
+          </h2>
+          <div class="cont dragCont">
+
+            <!-- 没有内容 -->
+            <div class="nomore">
+              <i class="iconfont icon-xiaolian"></i>
+              <p>还没有内容唷，赶紧从左边拖拽过来试试看</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- dialog -->
+<div class="dialog-bg">
+  <div class="dialog-box">
+    <div class="title">
+      <span class="fl">添加工艺</span>
+      <span class="fr js-dialogClose"><i class="iconfont icon-guanbi"></i></span>
+    </div>
+    <div class="cont text-center">
+      <div class="txt">
+        <input type="text" class="name" placeholder="请输入工艺流程名字">
+      </div>
+      <a href="javascript:;" class="abtn">保 存</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- js -->
+<script src="js/jquery.min.js"></script>
+<script src="tool/drag/jquery.dad.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
+<script>
+  //公共头部图标
+  var host = window.location.host;
+  var html1 = '<img src="images/logo.png" alt="">'
+  var html2 = '<img src="images/bandex.png" alt="">'
+  if (host == "ziyun.bandexsoft.com") {
+    $('.logo').html(html2)
+  } else {
+    $('.logo').html(html1)
+  }
+
+  var username = getLocalStorage(USER);
+  $('.userName').html(username)
+  //注销登录
+  function logout() {
+    var logout = $('.user');
+    logout.click(function () {
+      if (confirm("你确定要注销？")) {
+        setStorage(LOGIN_SESSION_TOKEN, null);
+        setStorage(USER, null);
+        location.href = 'login.html';
+      } else {
+        return false;
+      }
+    })
+  }
+  logout();
+
+  var permissions = getLocalStorage(PERMISSIONS)
+  if (permissions == 'true') {
+    $('.orderEntry').show();
+  } else {
+    $('.orderEntry').hide('500');
+  }
+  //登录认证
+  function Certification() {
+    var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+    if (ACCESS_TOKEN == undefined || ACCESS_TOKEN == null || ACCESS_TOKEN == "") {
+      tokenFlag = false;
+      alert("认证过期，请重新登录");
+      location.href = "login.html";
+    }
+  }
+  Certification()
+  $(function () {
+
+    // 弹窗
+    var dialogBg = $('.dialog-bg');
+
+    //拖拽
+    var dragTag = $('.dragTag').dad();
+    var dragCont = $('.dragCont');
+    dragTag.addDropzone(dragCont, function (e) {
+      if (0 === dragCont.find('.item').length) {
+        dragCont.html('');
+      }
+      e.clone().css({visibility: 'visible'}).appendTo(dragCont);
+    });
+
+    //新增
+    var addMore = $('.addMore');
+    addMore.click(function () {
+      dialogBg.fadeIn(200);
+      dialogBg.find('.name').val('');
+    })
+
+    //编辑
+    var jsDragEdit = $('.js-dragEdit');
+    jsDragEdit.click(function () {
+      if ($(this).hasClass('save')) {
+        $(this).removeClass('save');
+        $(this).html('编辑');
+
+        $(this).parents('.childbox').find('.item').removeClass('show');
+
+        //禁止拖拽
+        dragTag.activate();
+      } else {
+        $(this).addClass('save');
+        $(this).html('保存');
+
+        $(this).parents('.childbox').find('.item').addClass('show');
+
+        //释放拖拽
+        dragTag.deactivate();
+      }
+    })
+
+    //删除
+    $(document).on('click', '.process-flow .childbox .del', function () {
+      $(this).parents('.item').remove();
+    })
+
+    //修改
+    $(document).on('click', '.editVal', function () {
+      var val = $(this).siblings('.val').text();
+      $('.js-currChange').removeClass('js-currChange');
+      $(this).siblings('.val').addClass('js-currChange');
+      dialogBg.fadeIn(300);
+      dialogBg.find('.name').val(val);
+    })
+
+    //保存
+    dialogBg.find('.abtn').click(function () {
+      var val = dialogBg.find('.name').val();
+      if (0 === $('.js-currChange').length) {
+        //新增
+        var item = '<div class="item">' +
+            '<div class="c">' +
+            '<div class="val">' + val + '</div>' +
+            '<i class="iconfont icon-guanbi del"></i>' +
+            '<i class="iconfont icon-bianji editVal"></i>' +
+            '</div>'
+        '</div>';
+        $('.addMore').before(item);
+      } else {
+        //修改
+        $('.js-currChange').html(val);
+      }
+      $('.js-currChange').removeClass('js-currChange dads-children');
+      closeDialog();
+    })
+
+    //关闭弹窗
+    function closeDialog() {
+      $('.dialog-bg').fadeOut(300);
+    }
+
+    $('.js-dialogClose').click(function () {
+      closeDialog();
+    })
+
+
+  })
+</script>

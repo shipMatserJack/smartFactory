@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>物料录入</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="tool/layer/skin/layer.css"/>
+    <link rel="stylesheet" href="tool/layer/layim/layim.css"/>
+    <link rel="stylesheet" href="tool/layer/skin/layer.ext.css"/>
+</head>
+<body>
+
+<div class="base-header">
+    <a href="index.html" class="fl logo">
+        <!--<img src="images/logo.png" alt="">-->
+    </a>
+    <div class="fr">
+        <div class="fl emial">
+            <i class="iconfont icon-youxiang curr"></i>
+        </div>
+        <a href="login.html">
+            <div class="user fl">
+                <img src="images/userico.png" alt="">
+                <span class="userName">Aaron</span>
+                <i class="iconfont icon-xiala"></i>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="base-main">
+
+    <!-- 左导航 -->
+    <div class="base-leftnav">
+        <div class="scroll">
+            <ul>
+                <li><a href="index.html">
+                    <i class="iconfont icon-zhuye1"></i>
+                    首页
+                </a></li>
+                <li class="orderEntry"><a href="order-entry.html">
+                    <i class="iconfont icon-dingdan"></i>
+                    订单录入
+                </a></li>
+                <li><a class="curr" href="material-input.html">
+                    <i class="iconfont icon-wuliaoguanli"></i>
+                    物料录入
+                </a></li>
+                <li><a href="qrcode.html">
+                    <i class="iconfont icon-erweima"></i>
+                    二维码管理
+                </a></li>
+                <li><a href="drawing-management.html">
+                    <i class="iconfont icon-tuzhi"></i>
+                    图纸管理
+                </a></li>
+                <li><a href="process-route.html">
+                    <i class="iconfont icon-liucheng"></i>
+                    工艺路线
+                </a></li>
+                <li><a href="#">
+                    <i class="iconfont icon-icon"></i>
+                    用户管理
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 公共导航 -->
+    <div class="base-sub-nav clearfix">
+        <div class="fl"><a href="index.html">主页</a><span class="arrow">&gt;</span><span class="curr">物料录入</span></div>
+        <div class="fr">
+            <div class="setting"><a href="#"><i class="iconfont icon-artboard7"></i></a></div>
+        </div>
+    </div>
+
+    <!-- 右，内容区 -->
+    <div class="base-rightcont bg clearfix">
+
+        <div class="material-inpout">
+            <dl>
+                <dt>订单编号：</dt>
+                <dd id="box">
+                    <div id="orderNo"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>批次号：</dt>
+                <dd>
+                    <input id="batchNum" text="text" placeholder="点击输入批次号">
+                </dd>
+            </dl>
+            <dl>
+                <dt>采购数量：</dt>
+                <dd>
+                    <div class="num-box">
+                        <span class="jian fl" id="jian">-</span>
+                        <input id="materielNo" type="text" value="1" class="fl">
+                        <span class="jia fl" id="jia">+</span>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>采购价格：</dt>
+                <dd>
+                    <input id="materielPrice" type="text" placeholder="点击输入采购价格">
+                    <span class="procurementPrice" style="width:250px;color:red;margin-left:10px;display:none;">最多输入10位，精确到小数点后2位</span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>供应商：</dt>
+                <dd>
+                    <input id="materialSupplie" type="text" placeholder="点击输入供应商名称">
+                </dd>
+            </dl>
+            <div class="btn-wrap">
+                <a id="mycommit" href="#" class="abtn">提 交</a>
+                <a id="myreset" href="#" class="abtn ml30 gary">重 置</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- js -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/common.js"></script>
+<script src="tool/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/controller/material-input.js"></script>
+
+</body>
+</html>
+<script>
+  var username = getLocalStorage(USER);
+  $('.userName').html(username)
+  //注销登录
+  function logout() {
+    var logout = $('.user');
+    logout.click(function () {
+      if (confirm("你确定要注销？")) {
+        setStorage(LOGIN_SESSION_TOKEN,null);
+        setStorage(USER,null);
+        location.href = 'login.html';
+      } else {
+        return false;
+      }
+    })
+  }
+  logout();
+
+    //登录认证
+    function Certification() {
+        var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+        if (ACCESS_TOKEN == undefined || ACCESS_TOKEN == null || ACCESS_TOKEN == "") {
+            tokenFlag = false;
+            alert("认证过期，请重新登录");
+            location.href = "login.html";
+        }
+    }
+    Certification();
+
+    $(function () {
+
+        //輸入框邏輯
+        var orderNo = document.getElementById("orderNo");
+
+        var box = document.getElementById("box");
+
+        var datas_orderNumber = [];
+
+        var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+
+        $.ajax({
+            url: TARCK_INTOPIECES_SERVER_BASE_URI + '/selectOrderByLike',
+            type: 'GET',
+//            beforeSend: function (request) {
+//                request.setRequestHeader("access_token", access_token);
+//            },
+            contentType: 'application/json ',
+            dataType: "json",
+            headers: {
+                "token": ACCESS_TOKEN
+            },
+            success: function (res) {
+                if(res.token){
+                    var token = res.token
+                    setStorage(LOGIN_SESSION_TOKEN,token);
+                }
+                if(res.code == 401){
+                    alert('身份认证过期，请重新登录！')
+                    window.location.href='./login.html'
+                }
+                if(res.code == 200){
+                    datas_orderNumber = res.data;
+                }
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown) {
+              if(XMLHttpRequest.code == 401){
+                alert("身份认证过期，请重新登录！")
+                window.location.href='login.html'
+              }
+            }
+        });
+
+        //输入
+        $('#materielNo').blur(function () {
+            var val = $('#materielNo').val();
+            if (val <= 0 || isNaN(val)) {
+                $('#materielNo').val(1);
+            }
+        })
+
+        $('#jia').click(function () {
+            var val = $('#materielNo').val();
+            $('#materielNo').val(parseInt(val) + 1);
+        })
+
+        $('#jian').click(function () {
+            var val = $('#materielNo').val();
+            if (val >= 2) {
+                $('#materielNo').val(val - 1);
+            }
+        })
+    })
+</script>

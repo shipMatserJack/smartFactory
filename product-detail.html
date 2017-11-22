@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>物料管理</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/comm.js"></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/controller/productionDetail.js" ></script>
+
+</head>
+<body>
+
+<div class="base-header">
+	<a href="index.html" class="fl logo">
+		<!--<img src="images/logo.png" alt="">-->
+	</a>
+	<div class="fr">
+		<div class="fl emial">
+			<i class="iconfont icon-youxiang curr"></i>
+		</div>
+		<a href="login.html">
+			<div class="user fl">
+				<img src="images/userico.png" alt="">
+				<span class="userName">Aaron</span>
+				<i class="iconfont icon-xiala"></i>
+			</div>
+		</a>
+	</div>
+</div>
+
+<div class="base-main">
+	
+	<!-- 左导航 -->
+	<div class="base-leftnav">
+		<div class="scroll">
+			<ul>
+				<li><a class="curr" href="index.html">
+					<i class="iconfont icon-zhuye1"></i>
+					首页
+				</a></li>
+				<li class="orderEntry"><a href="order-entry.html">
+					<i class="iconfont icon-dingdan"></i>
+					订单录入
+				</a></li>
+				<li><a href="material-input.html">
+					<i class="iconfont icon-wuliaoguanli"></i>
+					物料录入
+				</a></li>
+				<li><a href="qrcode.html">
+					<i class="iconfont icon-erweima"></i>
+					二维码管理
+				</a></li>
+				<!--<li><a href="drawing-management.html">-->
+					<!--<i class="iconfont icon-tuzhi"></i>-->
+					<!--图纸管理-->
+				<!--</a></li>-->
+				<li><a href="process-route.html">
+					<i class="iconfont icon-liucheng"></i>
+					工艺路线
+				</a></li>
+				<li><a href="#">
+					<i class="iconfont icon-icon"></i>
+					用户管理
+				</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 公共导航 -->
+	<div class="base-sub-nav clearfix">
+		<div class="fl"><a href="index.html">主页</a><span class="arrow">&gt;</span><span>物料管理</span><span class="arrow">&gt;</span><span class="curr">详情</span></div>
+		<div class="fr">
+			<div class="setting"><a href="#"><i class="iconfont icon-artboard7"></i></a></div>
+		</div>
+	</div>
+
+	<!-- 右，内容区 -->
+	<div class="base-rightcont clearfix">
+		
+		<!-- 搜索 -->
+		<div class="base-right-search clearfix">
+			<div class="fr">
+				<div class="search shadow fl">
+					<i class="iconfont fl icon-search02"></i>
+					<input type="text" class="fl nostyle" placeholder="设备名称和设备人员名称">
+				</div>
+				<div class="base-select shadow fl ml15 ind-nav-select">
+	                <div class="select-head">
+	                    <div class="con">已完成</div>
+	                    <i class="icon"></i>
+	                </div>
+	                <div class="select-list">
+	                    <ul>
+	                        <li>已完成</li>
+	                        <li>未完成</li>
+	                        <li>进行中</li>
+	                    </ul>
+	                </div>
+	            </div>
+				<a href="#" class="fl ml15 abtn">搜 索</a>
+			</div>
+		</div>
+
+		<!-- 详情 -->
+		<div class="product-count clearfix">
+			<div class="p30">
+				<div class="y-blue">
+					<h2 id="device_part_ed"></h2>
+					<p>已生产零件(个)</p>
+				</div>
+			</div>
+			<div class="p30">
+				<div class="y-orange">
+					<h2 id="device_part_count"></h2>
+					<p>零件总数(个)</p>
+				</div>
+			</div>
+			<div class="p20">
+				<h3 id="device_part_ratio"></h3>
+				<p>完成率</p>
+				<i class="iconfont icon-liebiao"></i>
+			</div>
+			<div class="p20">
+				<h3 id="device_part_time"></h3>
+				<p>生产已用时</p>
+				<i class="iconfont icon-shijian"></i>
+			</div>
+		</div>
+
+		<div class="product-detail-list">
+			<div id="product_Container" class="wrap-padding">
+				<!--<div class="box-list">
+					<div class="time"><i class="circle green"></i>2017.08.12 12:30</div>
+					<div class="cont">
+						<dl>
+							<dt>
+								<span class="fl">零件编号：<span class="val">NU002</span></span>
+								<span class="fr green">正在生产</span>
+							</dt>
+							<dd>零件件数：<span class="val">2件</span></dd>
+							<dd>生产责任人：<span class="val">许如芸</span></dd>
+							<dd>生产机床编号：<span class="val">001212</span></dd>
+						</dl>
+					</div>
+				</div>-->
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
+<script>
+	//公共头部图标
+	var host = window.location.host;
+	console.log(host)
+	var html1 = '<img src="images/logo.png" alt="">'
+
+	var html2 = '<img src="images/bandex.png" alt="">'
+
+	if(host == "ziyun.bandexsoft.com"){
+
+		$('.logo').html(html2)
+	}else{
+		$('.logo').html(html1)
+	}
+
+
+  var username = getLocalStorage(USER);
+  $('.userName').html(username)
+  //注销登录
+  function logout() {
+    var logout = $('.user');
+    logout.click(function () {
+      if (confirm("你确定要注销？")) {
+        setStorage(LOGIN_SESSION_TOKEN,null);
+        setStorage(USER,null);
+        location.href = 'login.html';
+      } else {
+        return false;
+      }
+    })
+  }
+  logout();
+
+  var permissions = getLocalStorage(PERMISSIONS)
+  if(permissions == 'true'){
+    $('.orderEntry').show();
+  }else{
+    $('.orderEntry').hide('500');
+  }
+
+</script>

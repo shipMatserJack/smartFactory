@@ -1,0 +1,309 @@
+.c-m1
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.6) ), color-stop(50%, rgba(255,255,255,0.2) ),color-stop(51%, rgba(255, 255, 255, 0) ), to(rgba(255, 255, 255, 0) ));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 51%, rgba(255,255,255,0) 100%);
+    background-image: linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 51%, rgba(255,255,255,0) 100%) ;
+}
+.c-m2
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.4)),to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,  rgba(255,255,255,0) 100%);
+    background-image: linear-gradient(top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%) ;
+}
+.c-m3
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.4) ), color-stop(50%, rgba(255,255,255,0) ), to(rgba(255, 255, 255, 0.4) ));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 50%,  rgba(255,255,255,0.4) 100%);
+    background-image: linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 50%,  rgba(255,255,255,0.4) 100%);
+}
+.c-m4
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0) ), color-stop(50%, rgba(255,255,255,0.4) ), to(rgba(255, 255, 255, 0) ));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,  rgba(255,255,255,0) 100%);
+    background-image: linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,  rgba(255,255,255,0) 100%);
+}
+.c-m5
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.4) ), color-stop(8%, rgba(255,255,255,0.2) ),color-stop(9%, rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.2) 8%,rgba(255,255,255,0.1) 9%,  rgba(255,255,255,0) 100%);
+    background-image: linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.2) 8%,rgba(255,255,255,0.1) 9%,  rgba(255,255,255,0) 100%);
+}
+
+.c-m6
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35) ), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.35) 0%,  rgba(0,0,0,0) 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,0.35) 0%,  rgba(0,0,0,0) 100%);
+}
+.c-m7
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0) ), to(rgba(0, 0, 0, 0.2)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,  rgba(0,0,0,0.2) 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,0) 0%,  rgba(0,0,0,0.2) 100%);
+}
+.c-m8
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2) ), color-stop(50%, rgba(0,0,0,0)), to(rgba(0, 0, 0, 0.2)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.2) 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(20,0,0,0) 50%,rgba(0,0,0,0.2) 100%);
+}
+.c-m9
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0) ), color-stop(50%, rgba(0,0,0,0.2) ), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0) 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(20,0,0,0.2) 50%,rgba(0,0,0,0) 100%);
+}
+.c-m10
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0) ), color-stop(91%, rgba(0,0,0,0.1) ),color-stop(92%, rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.4)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 91%,rgba(0,0,0,0.2) 92%,rgba(0,0,0,.4) 100%);
+    background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(20,0,0,0.1) 91%,rgba(0,0,0,0.2) 92%,rgba(0,0,0,0.4) 100%);
+}
+.c-m11
+{
+    background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    -webkit-background-size: 0.44em 100%;
+    background-size: 0.44em 100%
+}
+.c-m12
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.2) ), color-stop(49%, rgba(255,255,255,0.1) ),color-stop(50%, rgba(255, 255, 255, 0) ), to(rgba(255, 255, 255, 0) ));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,   rgba(255,255,255,0) 100%);
+    background-image: linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,   rgba(255,255,255,0) 100%);
+}
+.c-bla
+{
+    background-color:#000;
+}
+.c-red
+{
+    background-color:#EB0000;
+}
+
+.c-blu
+{
+    background-color:#486A9A;
+}
+.c-blu1
+{
+    background-color:#4A8DDB;
+}
+.c-blu2
+{
+    background-color:#05B0DE;
+}
+.c-wh
+{
+    background-color:#FFF;
+}
+
+.c-gra
+{
+    background-color:#E6E6E6;
+}
+.c-org
+{
+    background-color:#ED7D00;
+}
+.c-pink
+{
+
+    background-color:#EA6D8D;
+}
+.c-org1
+{
+    background-color:#F6EDDC;
+}
+.t-wh
+{
+    color:white;
+}
+
+.t-bla
+{
+    color:black;
+}
+
+.t-gra{
+    color:#838695;
+}
+
+.t-blu
+{
+    color:#385487;
+}
+.t-yel
+{
+    color:#FFF6C4;
+}
+.t-org
+{
+    color:#E69329;
+}
+.b-bla
+{
+    border-color:black
+}
+.b-wh
+{
+    border-color:white
+}
+.b-gra
+{
+    border-color:#ABABAB;
+}
+.b-blu
+{
+    border-color:#112E87;
+}
+.b-org
+{
+    border-color:#ED7D00;
+}
+.c-blu008a{
+    background-color: #008aff;
+}
+.c-blu4653{
+    background-color: #46535f;
+}
+.t-blu99a3{
+    color: #99a3af;
+}
+.b-blu3440{
+    border-color: #34404c;
+}
+.b-gra5764{
+    border-color: #576470;
+}
+.b-whe9eff{
+    background-color: #e9eff4;
+}
+#color1{
+    background-color: #7acc5a;
+}
+#color2{
+    background-color: #fa2a48;
+}
+#color3{
+    background-color: #ffc539;
+}
+#color4{
+    background-color: #c9c9c9;
+}
+#color5{
+    background-color: #35a1fc;
+}
+.t-gra9999{
+    color: #999999;
+}
+.t-gra5555{
+    color: #555555;
+}
+.t-gra8888{
+    color: #888888;
+}
+
+.c-yelfec6{
+    background-color: #fec600;
+}
+.c-blu198a{
+    background-color: #198aeb;
+}
+.c-graf7f7{
+    background-color: #f7f7f8;
+}
+.b-grae8e8{
+    border-color: #e8e8ea;
+}
+.c-run{
+    background-color: #7dcd5d;
+}
+.c-stop{
+    background-color: #fa2e4c;
+}
+.c-free{
+    background-color: #ffc63d;
+}
+.c-shutdown{
+    background-color: #cacaca;
+}
+.c-debug{
+    background-color: #249bff;
+}
+.b-grae2eb{
+    border-color:#e2ebee;
+}
+.c-graf4f4{
+    background-color: #f4f4f4;
+}
+.c-grarbfbf{
+    background-color: #bfbfbf;
+}
+.t-gra9999{
+    color: #999999;
+}
+.c-gref4f8{
+    background-color: #f4f8f9;
+}
+.t-gra7777{
+    color: #777777;
+}
+.c-gre80c2{
+    background-color: #80c269;
+}
+.c-yelfec5{
+    background-color: #fec54c;
+}
+.c-gracacb{
+    background-color: #cacbcc;
+}
+.c-blu2e9d{
+    background-color: #2e9dfc;
+}
+.c-yellffc{
+    background-color: #ffc539;
+}
+.b-gradcdc{
+    border-color: #dcdcdc;
+}
+.c-blu3bbb{
+    background-color: #3bbbfc;
+}
+.c-gre8bc7{
+    background-color: #8bc778;
+}
+.b-grae3e9{
+    border-color: #e3e9ea;
+}
+.c-graf7f7{
+    background-color: #f7f7f9;
+}
+.b-grae6e9{
+    border-color: #e6e9f0;
+}
+.t-gra3333{
+    color: #333333;
+}
+.b-grae5e5{
+    border-color: #e5e5e5;
+}
+.t-gra6666{
+    color: #666666;
+}
+.b-bluc3e3{
+    border-color: #c3e3ff;
+}
+.index_ubb1{
+
+    border-bottom:1px solid #576470;
+}
+.index_ubb2{
+    border-bottom:1px solid #34404c;
+}
+.c-grafafa{
+    background-color: #fafafa;
+}
+.b-gradad9{
+    border-color: #dad9d9;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>二维码管理</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/comm.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/controller/jQuery.print.js"></script>
+    <script type="text/javascript" src="js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="js/controller/qrcode.js"></script>
+</head>
+<body>
+
+<div class="base-header">
+    <a href="index.html" class="fl logo">
+        <!--<img src="images/logo.png" alt="">-->
+    </a>
+    <div class="fr">
+        <div class="fl emial">
+            <i class="iconfont icon-youxiang curr"></i>
+        </div>
+        <a href="login.html">
+            <div class="user fl">
+                <img src="images/userico.png" alt="">
+                <span class="userName">Aaron</span>
+                <i class="iconfont icon-xiala"></i>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="base-main">
+    <!-- 左导航 -->
+    <div class="base-leftnav">
+
+        <div class="scroll">
+            <ul>
+                <li><a href="index.html">
+                    <i class="iconfont icon-zhuye1"></i>
+                    首页
+                </a></li>
+                <li class="orderEntry"><a href="order-entry.html">
+                    <i class="iconfont icon-dingdan"></i>
+                    订单录入
+                </a></li>
+                <!--<li><a href="material-input.html">-->
+                <!--<i class="iconfont icon-wuliaoguanli"></i>-->
+                <!--物料录入-->
+                <!--</a></li>-->
+                <li><a class="curr" href="qrcode.html">
+                    <i class="iconfont icon-erweima"></i>
+                    二维码管理
+                </a></li>
+                <li><a href="drawing-management.html">
+                    <i class="iconfont icon-tuzhi"></i>
+                    图纸管理
+                </a></li>
+                <li><a href="process-route.html">
+                    <i class="iconfont icon-liucheng"></i>
+                    工艺路线
+                </a></li>
+                <li><a href="#">
+                    <i class="iconfont icon-icon"></i>
+                    用户管理
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 公共导航 -->
+    <div class="base-sub-nav clearfix">
+        <div class="fl"><a href="index.html">主页</a><span class="arrow">&gt;</span><span class="curr">二维码管理</span></div>
+        <div class="fr">
+            <div class="setting"><a href="#"><i class="iconfont icon-artboard7"></i></a></div>
+        </div>
+    </div>
+
+    <!-- 右，内容区 -->
+    <div class="base-rightcont bg clearfix">
+        <h1>图纸二维码</h1>
+        <div class="material-inpout">
+            <dl>
+                <dt>订单号：</dt>
+                <dd id="box">
+                    <input id="orderNo" type="text" placeholder="点击输入订单编号">
+                </dd>
+            </dl>
+            <dl>
+                <dt>图纸编号：</dt>
+                <dd>
+                    <div class="base-select w300 fl ind-nav-select">
+                        <div class="select-head">
+                            <div id="select_div" class="con"></div>
+                            <i class="icon"></i>
+                        </div>
+                        <div class="select-list">
+                            <ul id="select_ul">
+                            </ul>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl class="noheight">
+                <dt>二维码：</dt>
+                <dd>
+                    <!--<div class="upLoadWrapper codeUpWrapper uploadFirst">
+                        <div class="codeUp"><i class="iconfont icon-jiahao"></i></div>
+                        <div class="childUpload" id="imgUpload">
+                        </div>
+                    </div>-->
+                    <div id="qrcode_div">
+
+                        <div id="my_qrcode" style="overflow: hidden">
+                            <!--<img style="width:160px;height:160px;float:left;display: block;padding:10px;" src="images/qrcode.jpg"/>-->
+                        </div>
+                    </div>
+                    <div id="page" class="page"></div>
+                </dd>
+            </dl>
+
+            <div class="btn-wrap mr180 text-center">
+                <button id="print_button" class="abtn">打 印</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="base-rightcont bg clearfix">
+        <h1>设备二维码</h1>
+        <div class="material-inpout">
+            <dl class="noheight">
+                <dt>二维码：</dt>
+                <dd>
+                    <!--<div class="upLoadWrapper codeUpWrapper uploadFirst">
+                        <div class="codeUp"><i class="iconfont icon-jiahao"></i></div>
+                        <div class="childUpload" id="imgUpload">
+                        </div>
+                    </div>-->
+                    <div id="equipment_qrcode_div">
+
+                        <div id="equipment_qrcode" style="overflow: hidden;">
+                            <!--<img style="width:160px;height:160px;float:left;display: block;padding:10px;" src="images/qrcode.jpg"/>-->
+                        </div>
+                    </div>
+                    <div id="devicePage" class="page"></div>
+                </dd>
+            </dl>
+
+            <div class="btn-wrap mr180 text-center">
+                <button id="equipment_print_button" class="abtn">打 印</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- js -->
+
+
+<!-- 图片上传js -->
+<script src="js/webuploader.min.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
+<script>
+  var username = getLocalStorage(USER);
+  $('.userName').html(username)
+  //注销登录
+  function logout() {
+    var logout = $('.user');
+    logout.click(function () {
+      if (confirm("你确定要注销？")) {
+        setStorage(LOGIN_SESSION_TOKEN,null);
+        setStorage(USER,null);
+        location.href = 'login.html';
+      } else {
+        return false;
+      }
+    })
+  }
+  logout();
+
+  var permissions = getLocalStorage(PERMISSIONS)
+  if(permissions == 'true'){
+    $('.orderEntry').show();
+  }else{
+    $('.orderEntry').hide('500');
+  }
+  
+//  $(function () {
+//        //輸入框邏輯
+//        var orderNo = document.getElementById("orderNo");
+//
+//        var box = document.getElementById("box");
+//
+//        var datas_orderNumber = [];
+//
+//        $.ajax({
+//            url: TARCK_INTOPIECES_SERVER_BASE_URI + '/selectOrderByLike',
+//            type: 'GET',
+//            headers: {
+//                "token": getLocalStorage(LOGIN_SESSION_TOKEN)
+//            },
+//
+//            contentType: 'application/json ',
+//            dataType: "json",
+//            success: function (res) {
+//                if(res.token){
+//                    var token = res.token
+//                    setStorage(LOGIN_SESSION_TOKEN,token);
+//                }
+//                if(res.code == 401){
+//                    alert('身份认证过期，请重新登录！')
+//                    window.location.href='./login.html'
+//                }
+//                if(res.code == 200){
+//                    datas_orderNumber = res.data;
+//                }
+//            },
+//            error : function(XMLHttpRequest, textStatus, errorThrown) {
+//              if(XMLHttpRequest.code == 401){
+//                alert("身份认证过期，请重新登录！")
+//                window.location.href='login.html'
+//              }
+//            }
+//        });
+//        //删除图片
+//        $('.del-img').click(function () {
+//            $(this).parents('li').remove();
+//        })
+//    })
+</script>

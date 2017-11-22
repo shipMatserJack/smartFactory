@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>订单录入</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" type="text/css" href="tool/layer/skin/layer.css"/>
+  <link rel="stylesheet" href="tool/layer/layim/layim.css"/>
+  <link rel="stylesheet" href="tool/layer/skin/layer.ext.css"/>
+  <link rel="stylesheet" href="css/jedate.css">
+
+</head>
+
+<body>
+
+<div class="base-header">
+  <a href="index.html" class="fl logo">
+    <!--<img src="images/logo.png" alt="">-->
+  </a>
+  <div class="fr">
+    <div class="fl emial">
+      <i class="iconfont icon-youxiang curr"></i>
+    </div>
+    <a href="login.html">
+      <div class="user fl">
+        <img src="images/userico.png" alt="">
+        <span class="userName">Aaron</span>
+        <i class="iconfont icon-xiala"></i>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="base-main">
+
+  <!-- 左导航 -->
+  <div class="base-leftnav">
+    <div class="scroll">
+      <ul>
+        <li><a href="index.html">
+          <i class="iconfont icon-zhuye1"></i>
+          首页
+        </a></li>
+        <li class='order-entry'><a class="curr" href="order-entry.html">
+          <i class="iconfont icon-dingdan"></i>
+          订单录入
+        </a></li>
+        <!--<li><a href="material-input.html">-->
+        <!--<i class="iconfont icon-wuliaoguanli"></i>-->
+        <!--物料录入-->
+        <!--</a></li>-->
+        <li><a href="qrcode.html">
+          <i class="iconfont icon-erweima"></i>
+          二维码管理
+        </a></li>
+        <li><a href="drawing-management.html">
+          <i class="iconfont icon-tuzhi"></i>
+          图纸管理
+        </a></li>
+        <li><a href="process-route.html">
+          <i class="iconfont icon-liucheng"></i>
+          工艺路线
+        </a></li>
+        <li><a href="#">
+          <i class="iconfont icon-icon"></i>
+          用户管理
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 公共导航 -->
+  <div class="base-sub-nav clearfix">
+    <div class="fl"><a href="index.html">主页</a><span class="arrow">&gt;</span><span class="curr">订单录入</span></div>
+    <div class="fr">
+      <div class="setting"><a href="#"><i class="iconfont icon-artboard7"></i></a></div>
+    </div>
+  </div>
+
+  <!-- 右，内容区 -->
+  <div class="base-rightcont bg clearfix">
+
+    <div class="material-inpout">
+      <!--<dl>-->
+      <!--<dt>选择工厂：</dt>-->
+      <!--<dd>-->
+      <!--<select id="selectFactory">-->
+      <!--<option class="Option" value="">请选择工厂</option>-->
+      <!--<option class="Option" value ="0">未开始</option>-->
+      <!--</select>-->
+      <!--</dd>-->
+      <!--</dl>-->
+      <dl>
+        <dt>订单编号：</dt>
+        <dd>
+          <input type="text" placeholder="点击输入订单编号" class="orderNumber">
+          <span id="b2"
+                style="width:20px;height:40px;border:1px solid red; padding:8px 10px;border-radius: 4px; display:none;"></span>
+        </dd>
+      </dl>
+      <dl>
+        <dt>产品名称：</dt>
+        <dd>
+          <input type="text" placeholder="点击输入产品名称" class="productName">
+          <span id="b3"
+                style="width:20px;height:40px;border:1px solid red;padding:8px 10px;border-radius: 4px;display:none;"></span>
+
+        </dd>
+      </dl>
+      <dl>
+        <dt>产品数量：</dt>
+        <dd>
+          <div class="num-box">
+            <span class="jian fl" id="jian">-</span>
+            <input type="text" id="material-num" value="1" class="fl" class="orderNum">
+            <span class="jia fl" id="jia">+</span>
+          </div>
+        </dd>
+      </dl>
+      <dl>
+        <dt>图纸编号：</dt>
+        <dd>
+          <input type="text" placeholder="点击输入图纸编号" class="drawingId">
+          <span id="b7"
+                style="width:20px;height:40px;border:1px solid red;padding:8px 10px;border-radius: 4px;display:none;"></span>
+        </dd>
+      </dl>
+      <dl>
+        <dt>客户名称：</dt>
+        <dd>
+          <input type="text" placeholder="点击输入客户名称" class="orderCompany">
+          <span id="b4"
+                style="width:20px;height:40px;border:1px solid red;padding:8px 10px;border-radius: 4px;display:none;"></span>
+
+        </dd>
+      </dl>
+      <dl>
+        <dt>订购时间：</dt>
+        <dd style="position: relative;">
+          <input type="text" id="begin" placeholder="请选择订购时间" class="orderTime">
+          <span id="b5"
+                style="width:20px;height:40px;border:1px solid red;padding:8px 10px;border-radius: 4px;display:none;"></span>
+          <div class="ub ub-img gra_down umw1 umh1 umar-r absolute_02"
+               style="position: absolute;top:1em;left:300px;"></div>
+        </dd>
+      </dl>
+      <dl>
+        <dt>交货时间：</dt>
+        <dd style="position: relative;">
+          <input type="text" id="over" placeholder="请选择交货时间" class="deliveryTime">
+          <span id="b6"
+                style="width:20px;height:40px;border:1px solid red;padding:8px 10px;border-radius: 4px;display:none;"></span>
+          <div class="ub ub-img gra_down umw1 umh1 umar-r absolute_02"
+               style="position: absolute;top:1em;left:300px;"></div>
+        </dd>
+      </dl>
+      <dl class="noheight">
+        <dt>图纸上传：</dt>
+        <dd style="position: relative">
+          <ul class="imglist clearfix parentsImglist">
+            <li class="upload uploadFirst">
+              <i class="iconfont icon-jiahao"></i>
+              <!--dom结构部分-->
+              <div id="uploader-demo">
+                <!--用来存放item-->
+                <div id="fileList" class="uploader-list firstList"></div>
+                <div id="filePicker">选择图片</div>
+              </div>
+            </li>
+          </ul>
+          <div class="mask"></div>
+        </dd>
+      </dl>
+
+      <dl class="noheight">
+        <dt>子图上传：</dt>
+        <dd style="position: relative;">
+          <div class="uploadSecond">
+            <i class="iconfont icon-shangchuan"></i>选择文件
+            <div id="uploader-demo">
+              <div id="fileListSecond" class="uploader-list secondList"></div>
+              <div id="filePickerSecond">选择图片</div>
+            </div>
+            <div id="tips"><img id="loading" src="images/loading.gif" alt=""></div>
+            <!--<button id="ctlBtn" class="btn btn-default">选择上传</button>-->
+          </div>
+          <div class="mask"></div>
+        </dd>
+      </dl>
+      <div class="btn-wrap">
+        <a href="####" class="abtn updata">提 交</a>
+        <a href="####" class="abtn ml30 gary reset">重 置</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/common.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/order-entry.js"></script>
+<script type="text/javascript" src="js/jquery.jedate.js"></script>
+
+<script src="js/webuploader.min.js"></script>
+<script src="js/search.js"></script>
+<script src="tool/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+<script>
+  var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+  $.ajax({
+    type: 'get',
+    url: TARCK_INTOPIECES_SERVER_BASE_URI + '/checkUserCanOperateOrder',
+    headers: {
+      "token": ACCESS_TOKEN
+    },
+    success: function (res) {
+      if (res.code == 401) {
+        alert('身份认证过期，请重新登录！')
+        window.location.href = './login.html'
+      }
+
+      if (res.data == 'true') {
+
+      } else {
+        alert('您没有这个权限');
+        window.history.go(-1);
+      }
+
+    }
+
+  })
+  var username = getLocalStorage(USER);
+  $('.userName').html(username)
+  //注销登录
+  function logout() {
+    var logout = $('.user');
+    logout.click(function () {
+      if (confirm("你确定要注销？")) {
+        setStorage(LOGIN_SESSION_TOKEN, null);
+        setStorage(USER, null);
+        location.href = 'login.html';
+      } else {
+        return false;
+      }
+    })
+  }
+  logout();
+
+
+  //登陆认证
+  function Certification() {
+    var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+    if (ACCESS_TOKEN == undefined || ACCESS_TOKEN == null || ACCESS_TOKEN == "") {
+      tokenFlag = false;
+      alert("认证过期，请重新登录");
+      location.href = "login.html";
+    }
+  }
+  Certification()
+  var access_token = getLocalStorage(LOGIN_SESSION_TOKEN);
+
+  //日期插件
+  $("#begin").jeDate({
+    format: "YYYY-MM-DD hh:mm:ss",
+//        isinitVal: true,
+    isTime: true,
+    minDate: "2014-09-19 00:00:00"
+  });
+  $("#over").jeDate({
+    format: "YYYY-MM-DD hh:mm:ss",
+//        isinitVal: true,
+    isTime: true,
+    minDate: "2014-09-19 00:00:00"
+  });
+
+  //选择工厂
+  //    $.ajax({
+  //        url: SERVER_BASE_URI + '/zyfactory/user/hierarchy'+"?level=C",
+  //        type: 'GET',
+  //        headers: {
+  //            "token": ACCESS_TOKEN
+  //        },
+  //        success: function (res) {
+  //            console.log(res)
+  //            if(res.token){
+  //                var token = res.token
+  //                setStorage(LOGIN_SESSION_TOKEN,token);
+  //            }
+  //            if (res.code == 200) {
+  //                var data = res.data
+  //                var html = '<option class="Option" value="">请选择工厂</option>';
+  //                for(var i=0;i<data.length;i++){
+  //                    html += '<option class="Option" value ="'+data[i].hierarchyCode+'">'+data[i].hierarchyName+'</option>'
+  //                }
+  //                $('#selectFactory').html(html);
+  //            }
+  //        },
+  //        error : function(XMLHttpRequest, textStatus, errorThrown) {
+  //            alert("Error :" + textStatus);
+  //        }
+  //    });
+
+
+  $(function () {
+    $('.drawingId').blur(function () {
+      var imgId = $(this).val()
+      if (imgId) {
+        $.ajax({
+          type: 'get',
+          url: TARCK_INTOPIECES_SERVER_BASE_URI + '/selectOrderNoByImgId/' + imgId,
+          headers: {
+            "token": ACCESS_TOKEN
+          },
+          success: function (res) {
+            if (res.code == 200) {
+              $('.mask').hide()
+              $('#b7').hide()
+            } else {
+              $('.mask').show()
+              $('#b7').show()
+              $('#b7').html("图纸编号已存在，请更换！")
+            }
+          }
+        })
+      }
+    })
+
+
+    var orderNumber = document.getElementsByClassName("orderNumber")[0];
+    var productName = document.getElementsByClassName("productName")[0];
+    var orderCompany = document.getElementsByClassName("orderCompany")[0];
+    var orderTime = document.getElementsByClassName("orderTime")[0];
+    var deliveryTime = document.getElementsByClassName("deliveryTime")[0];
+    var drawingId = document.getElementsByClassName("drawingId")[0];
+    checkout(orderNumber, "#b2");
+    checkout(productName, "#b3");
+    checkout(orderCompany, "#b4");
+//    checkout(orderTime, "#b5");
+//    checkout(deliveryTime, "#b6");
+    checkout(drawingId, "#b7");
+
+    //键盘弹起验证
+    function checkout(Obj, id) {
+      Obj.onblur = function () {
+        var content = Obj.value;
+        console.log(content)
+        if (!content || content == '' || content.trim() == '') {
+          Obj.style.border = '1px solid red';
+        } else {
+          Obj.style.border = '1px solid #ddd';
+          $(id).hide();
+        }
+      }
+    }
+
+//    orderTime.onchange = function () {
+//      console.log(orderTime.value);
+//      if(!orderTime.value || orderTime.value == '' || orderTime.value.trim() == ''){
+//        orderTime.style.border = '1px solid red';
+//      }else {
+//        orderTime.style.border = '1px solid #ddd';
+//        $('#b5').hide();
+//      }
+//    }
+//
+//    deliveryTime.onchange = function () {
+//      console.log(deliveryTime.value);
+//      if(!deliveryTime.value || deliveryTime.value == '' || deliveryTime.value.trim() == ''){
+//        deliveryTime.style.border = '1px solid red';
+//      }else {
+//        deliveryTime.style.border = '1px solid #ddd';
+//        $('#b6').hide();
+//      }
+//    }
+
+
+    //采购数量
+    var jia = $('#jia');
+    var jian = $('#jian');
+    var materialNum = $('#material-num');
+
+    //输入
+    materialNum.blur(function () {
+      var val = materialNum.val();
+      if (val <= 0 || isNaN(val)) {
+        materialNum.val(1);
+      }
+    })
+
+    jia.click(function () {
+      var val = parseInt(materialNum.val());
+      materialNum.val(val + 1);
+    })
+
+    jian.click(function () {
+      var val = parseInt(materialNum.val());
+      if (val >= 2) {
+        materialNum.val(val - 1);
+      }
+    })
+
+
+    $('.reset').on("click", function () {
+      window.location.reload();
+    })
+
+    var orderNo;
+    var orderNum;
+    var generalDrawingId;
+    var productName;
+    var orderId;
+    //数据上传
+// var TARCK_INTOPIECES_SERVER_BASE_URI = "http://localhost/intopieces";
+
+    $('#filePicker').change(function (event) {
+      orderNo = $('.orderNumber').val();
+      productName = $('.productName').val();
+      var orderCompany = $('.orderCompany').val();
+      orderNum = $('#material-num').val();
+      generalDrawingId = $('.drawingId').val();
+      var Time = $('.orderTime').val();
+      var orderTime = moment(Time).format();
+      var orderEndTime = moment($('.deliveryTime').val()).format();
+      var hierarchyCode = $('#selectFactory option:selected').val()
+      var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+      $.ajax({
+        url: TARCK_INTOPIECES_SERVER_BASE_URI + '/saveOrderInput',
+        type: 'post',
+        headers: {
+          "token": ACCESS_TOKEN
+        },
+//                beforeSend: function (request) {
+//                    request.setRequestHeader("token", access_token);
+//                },
+        contentType: 'application/json ',
+        dataType: "json",
+        data: JSON.stringify(
+            {
+              "orderNo": orderNo,
+              "productName": productName,
+              "orderCompany": orderCompany,
+              "orderNum": orderNum,
+              "generalDrawingId": generalDrawingId,
+              "orderTime": orderTime,
+              "orderEndTime": orderEndTime
+            }),
+        success: function (res) {
+          if (res.token) {
+            var token = res.token
+            setStorage(LOGIN_SESSION_TOKEN, token);
+          }
+          if (res.code == 401) {
+            alert('身份认证过期，请重新登录！')
+            window.location.href = './login.html'
+          }
+          if (res.code == 200) {
+            orderId = res.data
+          }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+          alert("Error :" + textStatus);
+        }
+      });
+    });
+
+
+    //提交更新
+    $('.updata').click(function () {
+      var Time = $('.orderTime').val();
+      var orderTime = moment(Time).format();
+      var orderEndTime = moment($('.deliveryTime').val()).format();
+      if (moment(orderEndTime).isBefore(orderTime)) {
+        layer.msg('时间选择不正确！');
+        return
+      }
+      var _this = this;
+
+      if (!$('.orderNumber').val() || $('.orderNumber').val() == '' || $.trim($('.orderNumber').val()) == '') {
+        $("#b2").show();
+        $("#b2").text("请输入订单编号");
+        return;
+      }
+      if (!$('.productName').val() || $('.productName').val() == '' || $.trim($('.productName').val()) == '') {
+        $("#b3").show();
+        $("#b3").text("请输入产品名称");
+        return;
+      }
+      if (!$('.drawingId').val() || $('.drawingId').val() == '' || $.trim($('.drawingId').val()) == '') {
+        $("#b7").show();
+        $("#b7").text("请输入图纸编号");
+        return;
+      }
+      if (!$('.orderCompany').val() || $('.orderCompany').val() == '' || $.trim($('.orderCompany').val()) == '') {
+        $("#b4").show();
+        $("#b4").text("请输入客户名称");
+        return;
+      }
+//      if (!$('.orderTime').val() || $('.orderTime').val() == '' || $.trim($('.orderTime').val()) == '') {
+//        $("#b5").show();
+//        $("#b5").text("请选择订购时间");
+//        return;
+//      }
+//      if (!$('.deliveryTime').val() || $('.deliveryTime').val() == '' || $.trim($('.deliveryTime').val()) == '') {
+//        $("#b6").show();
+//        $("#b6").text("请选择交货时间");
+//        return;
+//      }
+
+      if ($(this).hasClass('unclick')) {
+        return
+      }
+      $('#loading').show();
+      setTimeout(function () {
+        var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+        $.ajax({
+          url: TARCK_INTOPIECES_SERVER_BASE_URI + '/uploadParams',
+          type: 'post',
+          headers: {
+            "token": ACCESS_TOKEN
+          },
+//                    beforeSend: function (request) {
+//                        request.setRequestHeader("token", access_token)
+//                    },
+          contentType: 'application/json ',
+          dataType: "json",
+          data: JSON.stringify(
+              {
+                "fileUrl": arr,
+                "orderNo": orderNo,
+                "imgID": generalDrawingId,
+                "imgNum": successNum,
+                "orderNum": orderNum,
+                "productName": productName
+              }),
+          success: function (res) {
+            if (res.token) {
+              var token = res.token
+              setStorage(LOGIN_SESSION_TOKEN, token);
+            }
+            if (res.code == 401) {
+              alert('身份认证过期，请重新登录！')
+              window.location.href = './login.html'
+            }
+            if (res.code == 200) {
+              arr = [];
+              successNum = 0;
+              $('#loading').hide();
+              $('#tips').html('上传完成')
+              $(_this).addClass('unclick')
+              updata();
+            } else {
+              $(_this).addClass('unclick')
+              setTimeout(function () {
+                $(_this).removeClass('unclick')
+              }, 2000)
+              $('#tips').html('上传失败，请重试')
+            }
+          },
+          error: function (res) {
+
+            $(_this).addClass('unclick')
+            setTimeout(function () {
+              $(_this).removeClass('unclick')
+            }, 2000)
+            $('#tips').html('上传失败，请重试')
+
+            if (res.code == 401) {
+              alert("身份认证过期，请重新登录！")
+              window.location.href = 'login.html'
+            }
+          }
+        });
+      }, 1000)
+
+
+      function updata() {
+        var orderNo = $('.orderNumber').val();
+        var productName = $('.productName').val();
+        var orderCompany = $('.orderCompany').val();
+        var orderNum = $('#material-num').val();
+        var generalDrawingId = $('.drawingId').val();
+        var Time = $('.orderTime').val();
+        var orderTime = moment(Time).format();
+        var orderEndTime = moment($('.deliveryTime').val()).format();
+        if (moment(orderEndTime).isBefore(orderTime)) {
+          layer.msg('时间选择不正确！');
+          return
+        }
+        var ACCESS_TOKEN = getLocalStorage(LOGIN_SESSION_TOKEN);
+        $.ajax({
+          url: TARCK_INTOPIECES_SERVER_BASE_URI + '/updateOrderInput',
+          type: 'post',
+          headers: {
+            "token": ACCESS_TOKEN
+          },
+//                    beforeSend: function (request) {
+//                        request.setRequestHeader("token", access_token);
+//
+//                    },
+          contentType: 'application/json ',
+          dataType: "json",
+          data: JSON.stringify(
+              {
+                "orderNo": orderNo,
+                "productName": productName,
+                "orderCompany": orderCompany,
+                "orderNum": orderNum,
+                "generalDrawingId": generalDrawingId,
+                "orderTime": orderTime,
+                "orderEndTime": orderEndTime,
+                "id": orderId
+              }),
+          success: function (res) {
+            if (res.token) {
+              var token = res.token
+              setStorage(LOGIN_SESSION_TOKEN, token);
+            }
+            if (res.code == 401) {
+              alert('身份认证过期，请重新登录！')
+              window.location.href = './login.html'
+            }
+            if (res.code == 200) {
+              layer.msg('提交成功！');
+            }
+          },
+          error: function (XMLHttpRequest) {
+            if (XMLHttpRequest.code == 401) {
+              alert("身份认证过期，请重新登录！")
+              window.location.href = 'login.html'
+            }
+          }
+        });
+      }
+
+    })
+
+    //重置页面
+    $('.reset').click(function () {
+      parent.location.replace(parent.location.href);
+    })
+
+
+    var thumbnailWidth = 100;
+    var thumbnailHeight = 100;
+    // 初始化Web Uploader
+    var uploader1 = WebUploader.create({
+      // 选完文件后，是否自动上传。
+      auto: true,
+
+      // swf文件路径
+      // swf: BASE_URL + '/js/Uploader.swf',
+
+      // 文件接收服务端。
+      server: TARCK_INTOPIECES_SERVER_BASE_URI + '/uploadFile',
+
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#filePicker',
+
+      // 只允许选择图片文件。
+      accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif,image/bmp'
+      },
+      headers: {
+        "token": getLocalStorage(LOGIN_SESSION_TOKEN)
+      }
+    });
+// 当有文件添加进来的时候
+    uploader1.on('fileQueued', function (file) {
+      var $li = $(
+              '<div id="' + file.id + '" class="file-item thumbnail">' +
+              '<img>' +
+              '<div class="info">' + file.name + '</div>' +
+              '</div>'
+          ),
+          $img = $li.find('img');
+
+
+      // $list为容器jQuery实例
+      $('.firstList').append($li);
+
+      // 创建缩略图
+      // 如果为非图片文件，可以不用调用此方法。
+      // thumbnailWidth x thumbnailHeight 为 100 x 100
+      uploader1.makeThumb(file, function (error, src) {
+        if (error) {
+          $img.replaceWith('<span>不能预览</span>');
+          return;
+        }
+
+        $img.attr('src', src);
+      }, thumbnailWidth, thumbnailHeight);
+    });
+// 文件上传过程中创建进度条实时显示。
+    uploader1.on('uploadProgress', function (file, percentage) {
+      var $li = $('#' + file.id),
+          $percent = $li.find('.progress span');
+
+      // 避免重复创建
+      if (!$percent.length) {
+        $percent = $('<p class="progress"><span></span></p>')
+            .appendTo($li)
+            .find('span');
+      }
+
+      $percent.css('width', percentage * 100 + '%');
+    });
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+    uploader1.on('uploadSuccess', function (file, res) {
+//         console.log(res)
+      $.ajax({
+        url: TARCK_INTOPIECES_SERVER_BASE_URI + '/uploadParam',
+        type: 'post',
+        headers: {
+          "token": getLocalStorage(LOGIN_SESSION_TOKEN)
+        },
+//                beforeSend: function (request) {
+//                    request.setRequestHeader("access_token", "123");
+//                    request.setRequestHeader("code", "h5");
+//                },
+        contentType: 'application/json ',
+        dataType: "json",
+        data: JSON.stringify(
+            {
+              "orderNo": orderNo,
+              "imgID": generalDrawingId,
+              "filePath": res.data
+            }),
+        success: function (res) {
+          if (res.token) {
+            var token = res.token
+            setStorage(LOGIN_SESSION_TOKEN, token);
+          }
+          if (res.code == 401) {
+            alert('身份认证过期，请重新登录！')
+            window.location.href = './login.html'
+          }
+        },
+        error: function (err) {
+          if (err.code == 401) {
+            alert("身份认证过期，请重新登录！")
+            window.location.href = 'login.html'
+          }
+        }
+      });
+      $('#' + file.id).addClass('upload-state-done');
+    });
+
+// 文件上传失败，显示上传出错。
+    uploader1.on('uploadError', function (file) {
+      var $li = $('#' + file.id),
+          $error = $li.find('div.error');
+      // 避免重复创建
+      if (!$error.length) {
+        $error = $('<div class="error"></div>').appendTo($li);
+      }
+
+      $error.text('上传失败');
+    });
+
+// 完成上传完了，成功或者失败，先删除进度条。
+    uploader1.on('uploadComplete', function (file) {
+      $('#' + file.id).find('.progress').remove();
+    });
+
+
+    var arr = [];
+    // 监听上传成功的个数
+    var successNum = 0;
+    var uploader2 = WebUploader.create({
+      // 选完文件后，是否自动上传。
+      auto: true,
+
+      // swf文件路径
+      // swf: '${ctxStatic }/webupload/Uploader.swf',
+
+      // 文件接收服务端。
+      server: TARCK_INTOPIECES_SERVER_BASE_URI + '/uploadFile',
+
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#filePickerSecond',
+
+      // 只允许选择图片文件。
+      accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif,image/bmp'
+      },
+      method: 'POST',
+      headers: {
+        "token": getLocalStorage(LOGIN_SESSION_TOKEN)
+      }
+    });
+    // 当有文件添加进来的时候
+    uploader2.on('fileQueued', function (file) {  // webuploader事件.当选择文件后，文件被加载到文件队列中，触发该事件。等效于 uploader.onFileueued = function(file){...} ，类似js的事件定义。
+      var $li = $(
+              '<div id="' + file.id + '" class="file-item thumbnail">' +
+              '<img>' +
+              '<div class="info">' + file.name + '</div>' +
+              '</div>'
+          ),
+          $img = $li.find('img');
+
+      // $list为容器jQuery实例
+      $('.secondList').append($li);
+
+      // 创建缩略图
+      // 如果为非图片文件，可以不用调用此方法。
+      // thumbnailWidth x thumbnailHeight 为 100 x 100
+      uploader2.makeThumb(file, function (error, src) {   //webuploader方法
+        if (error) {
+          $img.replaceWith('<span>不能预览</span>');
+          return;
+        }
+        $img.attr('src', src);
+      }, thumbnailWidth, thumbnailHeight);
+    });
+    // 文件上传过程中创建进度条实时显示。
+    uploader2.on('uploadProgress', function (file, percentage) {
+      var $li = $('#' + file.id),
+          $percent = $li.find('.progress span');
+      // 避免重复创建
+      if (!$percent.length) {
+        $percent = $('<p class="progress"><span></span></p>')
+            .appendTo($li)
+            .find('span');
+      }
+
+      $percent.css('width', percentage * 100 + '%');
+    });
+
+    // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+    uploader2.on('uploadSuccess', function (file, res) {
+//        console.log(res.data)
+      arr.push(res.data)
+      successNum = successNum + 1;
+//		console.log(arr)
+//        console.log(res)
+      $('#' + file.id).addClass('upload-state-done');
+    });
+
+    // 文件上传失败，显示上传出错。
+    uploader2.on('uploadError', function (file) {
+      var $li = $('#' + file.id),
+          $error = $li.find('div.error');
+
+      // 避免重复创建
+      if (!$error.length) {
+        $error = $('<div class="error"></div>').appendTo($li);
+      }
+      $error.text('上传失败');
+    });
+
+    // 完成上传完了，成功或者失败，先删除进度条。
+    uploader2.on('uploadComplete', function (file) {
+      $('#' + file.id).find('.progress').remove();
+    });
+  })
+</script>

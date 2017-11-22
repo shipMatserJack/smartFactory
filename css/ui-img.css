@@ -1,0 +1,165 @@
+
+.im{
+	background-image: url('img/icon.png');
+}
+.im1{
+	background-image: url('img/icon1.png');
+}
+.im2{
+	background-image: url('img/icon2.png');
+}
+.statistics{
+	background-image: url('images/statistics.png');
+}
+.store{
+	background-image: url('images/store.png');
+}
+.yieldAnalysis{
+	background-image: url('images/yieldAnalysis.png');
+}
+.maintenance{
+	background-image: url('images/maintenance.png');
+}
+.visual{
+	background-image: url('images/visual.png');
+}
+.add{
+	background-image: url('images/add.png');
+}
+.edit{
+	background-image: url('images/edit.png');
+}
+.set_btn{
+	background-image: url('images/set_btn.png');
+}
+.left_6{
+	background-image: url('images/left_6.png');
+}
+.left_7{
+	background-image: url('images/left_7.png');
+}
+.left_5{
+	background-image: url('images/left_5.png');
+}
+.arrow_right{
+	background-image: url('images/arrow_right.png');
+}
+.left_4{
+	background-image: url('images/left_4.png');
+}
+.left_3{
+	background-image: url('images/left_3.png');
+}
+.left_2{
+	background-image: url('images/left_2.png');
+}
+.left_home{
+	background-image: url('images/left_home.png');
+}
+.pulldown{
+	background-image: url('images/pulldown.png');
+}
+.photo{
+	background-image: url('images/photo.png');
+}
+.mail{
+	background-image: url('images/mail.png');
+}
+.logo{
+	background-image: url('images/logo.png');
+}
+.index_refresh{
+	background-image: url('images/index_refresh.png');
+}
+.help{
+	background-image: url('images/help.png');
+}
+.gra_down{
+	background-image: url('images/gra_down.png');
+}
+.rdi{
+	background-image: url('images/rdi.png');
+}
+.no_rdi{
+	background-image: url('images/no_rdi.png');
+}
+.wh_pulldown{
+	background-image: url('images/wh_pulldown.png');
+}
+.assist1{
+	background-image: url('images/assist1.png');
+}
+.assist2{
+	background-image: url('images/assist2.png');
+}
+.assist3{
+	background-image: url('images/assist3.png');
+}
+.assist4{
+	background-image: url('images/assist4.png');
+}
+.assist5{
+	background-image: url('images/assist5.png');
+}
+.assist6{
+	background-image: url('images/assist6.png');
+}
+.del{
+	background-image: url('images/del.png');
+}
+.staff{
+	background-image: url('images/staff.png');
+}
+.stafftx{
+	background-image: url('images/stafftx.png');
+}
+.wh-arrow{
+	background-image: url('images/wh-arrow.png');
+}
+.login_bg{
+	background-image: url('images/bg.png');
+}
+.login_footer{
+	background-image: url('images/Light-Blue-Waves.png');
+}
+.login_logo{
+	background-image: url('images/logo1.png');
+}
+.code{
+	background-image: url('images/code.png');
+}
+.user{
+	background-image: url('images/user.png');
+}
+.passwd{
+	background-image: url('images/passwd.png');
+}
+.shadw{
+	background-image: url('images/shadw.png');
+}
+
+.online_person{
+	background-image: url('images/online_person.png');
+}
+.offline_person{
+	background-image: url('images/offline_person.png');
+}
+.mine{
+	background-image: url('images/mine.png');
+}
+
+.left-arrow{
+	background-image: url('images/left-arrow.png');
+}
+.right-arrow{
+	background-image: url('images/right-arrow.png');
+}
+.history-arrow{
+	background-image: url('images/history-arrow.png');
+}
+.ziyun-logo{
+	background-image: url('images/ziyun-logo.png');
+}
+.newZiYun-logo{
+	background-size: cover;
+}
